@@ -1,0 +1,60 @@
+<div class="form-container">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit(productForm)">
+    <mat-card>
+      <mat-card-content>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Insert name" formControlName="name" required>
+            <ng-container *ngFor="let validation of validations.name">
+              <mat-error *ngIf="productForm.get('name')?.hasError(validation.type) &&
+                                             (productForm.get('name')?.dirty || productForm.get('name')?.touched)">{{
+                validation.message }}</mat-error>
+            </ng-container>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>Price</mat-label>
+            <input matInput type="number" class="right-align" placeholder="0.00" formControlName="price" required>
+            <span matTextPrefix>S/.&nbsp;</span>
+            <ng-container *ngFor="let validation of validations.price">
+              <mat-error *ngIf="productForm.get('price')?.hasError(validation.type) &&
+                                             (productForm.get('price')?.dirty || productForm.get('price')?.touched)">{{
+                validation.message
+                }}</mat-error>
+            </ng-container>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Image</mat-label>
+            <input matInput placeholder="Insert url" formControlName="src">
+            <ng-container *ngFor="let validation of validations.price">
+              <mat-error *ngIf="productForm.get('src')?.hasError(validation.type) &&
+                                             (productForm.get('src')?.dirty || productForm.get('src')?.touched)">{{
+                validation.message
+                }}</mat-error>
+            </ng-container>
+          </mat-form-field>
+        </p>
+        <ng-container *ngIf="productForm.get('src')?.value">
+          <div class="preview-img-container">
+            <img [src]="productForm.get('src')?.value || defaultProduct | sanitizeImageUrl" alt="Preview Img">
+          </div>
+        </ng-container>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Insert Description" formControlName="description"></textarea>
+          </mat-form-field>
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="warn" type="button" (click)="goBack()">Back</button>
+        <button mat-raised-button color="disabled" type="reset">Reset</button>
+        <button mat-raised-button color="primary" type="submit">{{ isNewProduct ? 'Crear' : 'Actualizar' }}</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

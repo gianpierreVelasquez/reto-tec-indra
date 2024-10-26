@@ -1,0 +1,19 @@
+<app-paginator [items]="products" [pageSize]='pageSize' (onPageChangeEmitter)="onPageChange($event)"></app-paginator>
+<div class="product-list-container">
+  <ng-container *ngIf="products.length === 0">
+    <div class="empty-validator-container">
+      <img src="assets/images/no-products.png" alt="">
+      <h1>No products Found!</h1>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="products.length > 0">
+    <mat-grid-list [cols]="cols" rowHeight="300px" gutterSize="8px">
+      <mat-grid-tile *ngFor="let item of paginatedProducts || []; trackBy: trackByProductId" [colspan]="1" [rowspan]="1">
+        <app-product [product]="item" (onAction)="onAction($event)" />
+      </mat-grid-tile>
+    </mat-grid-list>
+  </ng-container>
+  <button mat-fab color="accent" aria-label="Add product icon" (click)="navigateToCreate()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

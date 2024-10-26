@@ -1,0 +1,13 @@
+:host .footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+:host mat-toolbar {
+  justify-content: center;
+
+  span {
+    font-size: 14px;
+  }
+}

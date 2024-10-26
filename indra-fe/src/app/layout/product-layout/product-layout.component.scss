@@ -1,0 +1,8 @@
+$footer-height: 130px;
+
+.product-container {
+  height    : calc(100% - $footer-height);
+  overflow-x: hidden;
+  overflow-y: hidden;
+	width     : 100%;
+}

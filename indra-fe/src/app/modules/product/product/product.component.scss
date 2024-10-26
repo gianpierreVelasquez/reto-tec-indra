@@ -1,0 +1,48 @@
+$default-margin: 16px;
+
+.form-container {
+  height        : 100%;
+  padding       : 16px;
+  overflow-y    : auto;
+}
+
+:host ::ng-deep mat-card {
+  height        : auto;
+  margin-bottom : calc($default-margin * 2);
+  max-width     : 400px;
+
+  button {
+    margin: auto;
+    width : 30%;
+  }
+}
+
+:host ::ng-deep mat-form-field {
+  width: 100%;
+}
+
+.right-align {
+  text-align: right;
+}
+
+input.right-align::-webkit-outer-spin-button,
+input.right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.right-align {
+  -moz-appearance: textfield;
+}
+
+.preview-img-container {
+  border: 1px dashed #cecece;
+  height: 120px;
+  margin: $default-margin 0 calc($default-margin * 2) 0;
+  width : 100%;
+
+  img {
+		height    : 100%;
+		object-fit: contain;
+    width     : 100%;
+	}
+}

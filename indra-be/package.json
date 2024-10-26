@@ -1,0 +1,28 @@
+{
+  "name": "indra-be",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "app.mjs",
+  "author": "Gianpierre Velasquez",
+  "license": "MIT",
+  "scripts": {
+    "start:dev": "nodemon ./src/app.mjs",
+    "lint": "standard --fix"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "express-validator": "^7.2.0",
+    "prisma": "^5.21.1",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.7",
+    "standard": "^17.1.2"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
+}

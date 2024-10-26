@@ -1,0 +1,28 @@
+$default-margin: 16px;
+
+.empty-validator-container {
+  align-items   : center;
+  display       : flex;
+  flex-direction: column;
+  margin        : calc($default-margin * 4) 0;
+  width         : 100%;
+
+  img {
+    width: 320px;
+  }
+}
+
+.product-list-container {
+  height        : 90%;
+  overflow-y    : auto;
+}
+
+:host ::ng-deep mat-grid-list {
+  margin-bottom: calc($default-margin * 3);
+}
+
+:host ::ng-deep .mdc-fab {
+  bottom  : 70px;
+  right   : $default-margin;
+  position: absolute;
+}
