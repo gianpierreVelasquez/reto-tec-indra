@@ -1,5 +1,5 @@
 # RETO INDRA FRONT-END
-El reto constituye en crear un CRUD de un producto utilizando angular, siguiente buenas practicas y unit testing
+El reto constituye en crear un CRUD de un producto utilizando angular, siguiendo buenas practicas e implementando unit testing
 
 ## Tabla de Contenidos
 - [Tecnología](#tecnología)
